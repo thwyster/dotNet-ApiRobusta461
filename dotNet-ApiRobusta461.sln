@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNet-ApiRobusta461.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNet-ApiRobusta461.Infra", "dotNet-ApiRobusta461.Infra\dotNet-ApiRobusta461.Infra.csproj", "{D33E5255-ADDE-4C9E-B74F-589DB2D5E2E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNet-ApiRobusta461.IoC", "dotNet-ApiRobusta461.IoC\dotNet-ApiRobusta461.IoC.csproj", "{FE49C3F5-4F80-4963-ABF5-FD9EF87D4AF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D33E5255-ADDE-4C9E-B74F-589DB2D5E2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33E5255-ADDE-4C9E-B74F-589DB2D5E2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33E5255-ADDE-4C9E-B74F-589DB2D5E2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE49C3F5-4F80-4963-ABF5-FD9EF87D4AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE49C3F5-4F80-4963-ABF5-FD9EF87D4AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE49C3F5-4F80-4963-ABF5-FD9EF87D4AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE49C3F5-4F80-4963-ABF5-FD9EF87D4AF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

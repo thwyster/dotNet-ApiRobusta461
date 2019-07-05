@@ -1,4 +1,5 @@
-﻿using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
+﻿using dotNet_ApiRobusta461.Domain.Arguments.Base;
+using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace dotNet_ApiRobusta461.Domain.Interfaces.Services
         AdicionarJogadorResponse AdicionarJogador(AdicionarJogadorRequest request);
         AlterarJogadorResponse AlterarJogador(AlterarJogadorRequest request);
         IEnumerable<JogadorResponse> ListarJogador();
+        ResponseBase ExcluirJogador(Guid Id);
     }
 }

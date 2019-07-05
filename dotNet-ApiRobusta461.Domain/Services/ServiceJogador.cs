@@ -1,4 +1,5 @@
-﻿using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
+﻿using dotNet_ApiRobusta461.Domain.Arguments.Base;
+using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
 using dotNet_ApiRobusta461.Domain.Entities;
 using dotNet_ApiRobusta461.Domain.Interfaces.Repositories;
 using dotNet_ApiRobusta461.Domain.Interfaces.Services;
@@ -35,7 +36,7 @@ namespace dotNet_ApiRobusta461.Domain.Services
             if (this.IsInvalid())
                 return null;
 
-            jogador = _repositoryJogador.AdicionarJogador(jogador);
+            jogador = _repositoryJogador.Adicionar(jogador);
 
             return (AdicionarJogadorResponse)jogador;
         }
@@ -47,7 +48,7 @@ namespace dotNet_ApiRobusta461.Domain.Services
                 AddNotification("AlterarJogadorRequest", "é obrigatorio");
             }
 
-            Jogador jogador = _repositoryJogador.ObterJogadorPorId(request.Id);
+            Jogador jogador = _repositoryJogador.ObterPorId(request.Id);
 
             if (jogador == null)
             {
@@ -65,7 +66,7 @@ namespace dotNet_ApiRobusta461.Domain.Services
             if (this.IsInvalid())
                 return null;
 
-            _repositoryJogador.AlterarJogador(jogador);
+            _repositoryJogador.Editar(jogador);
 
             return (AlterarJogadorResponse)jogador;
         }
@@ -78,14 +79,14 @@ namespace dotNet_ApiRobusta461.Domain.Services
             }
 
             var email = new Email(request.Email);
-            var jogador = new Jogador(email, "222");
+            var jogador = new Jogador(email, request.Senha);
 
             AddNotifications(jogador, email);
 
             if (jogador.IsInvalid())
                 return null;
 
-            jogador = _repositoryJogador.AutenticarJogador(request.Email, request.Senha);
+            jogador = _repositoryJogador.ObterPor(w => w.Email.Endereco == jogador.Email.Endereco && w.Senha == jogador.Senha);
 
 
             return (AutenticarJogadorResponse)jogador;
@@ -93,7 +94,22 @@ namespace dotNet_ApiRobusta461.Domain.Services
 
         public IEnumerable<JogadorResponse> ListarJogador()
         {
-            return _repositoryJogador.ListarJogador().Select(jogador => (JogadorResponse)jogador).ToList();
+            return _repositoryJogador.Listar().Select(jogador => (JogadorResponse)jogador).ToList();
+        }
+
+        public ResponseBase ExcluirJogador(Guid Id)
+        {
+            Jogador jogador = _repositoryJogador.ObterPorId(Id);
+
+            if (jogador == null)
+            {
+                AddNotification("Id", "Jogador não encontrados");
+                return null;
+            }
+
+            _repositoryJogador.Remover(jogador);
+
+            return new ResponseBase();
         }
     }
 }

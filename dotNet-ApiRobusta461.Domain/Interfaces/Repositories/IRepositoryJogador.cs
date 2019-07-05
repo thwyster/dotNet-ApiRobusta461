@@ -1,4 +1,5 @@
 ﻿using dotNet_ApiRobusta461.Domain.Entities;
+using dotNet_ApiRobusta461.Domain.Interfaces.Repositories.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,7 @@ using System.Threading.Tasks;
 
 namespace dotNet_ApiRobusta461.Domain.Interfaces.Repositories
 {
-    public interface IRepositoryJogador
+    public interface IRepositoryJogador : IRepositoryBase<Jogador, Guid>
     {
-        Jogador AutenticarJogador(string email, string senha);
-        Jogador AdicionarJogador(Jogador jogador);
-        void AlterarJogador(Jogador jogador);
-        IEnumerable<Jogador> ListarJogador();
-        Jogador ObterJogadorPorId(Guid id);
     }
 }

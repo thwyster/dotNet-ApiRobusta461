@@ -1,4 +1,5 @@
-﻿using dotNet_ApiRobusta461.Domain.Enum;
+﻿using dotNet_ApiRobusta461.Domain.Entities.Base;
+using dotNet_ApiRobusta461.Domain.Enum;
 using dotNet_ApiRobusta461.Domain.Extensions;
 using dotNet_ApiRobusta461.Domain.ValueObjects;
 using prmToolkit.NotificationPattern;
@@ -6,7 +7,7 @@ using System;
 
 namespace dotNet_ApiRobusta461.Domain.Entities
 {
-    public class Jogador : Notifiable
+    public class Jogador : EntityBase
     {
         public Jogador(Email email, string senha)
         {
@@ -15,6 +16,9 @@ namespace dotNet_ApiRobusta461.Domain.Entities
 
             new AddNotifications<Jogador>(this)
                 .IfNullOrInvalidLength(w => w.Senha, 6, 32, "A senha deve ter pelo menos 6 a 32 caracteres");
+
+            if (IsValid())
+                Senha = Senha.ConvertToMD5();
         }
 
         public Jogador(Nome nome, Email email, string senha)
@@ -22,7 +26,6 @@ namespace dotNet_ApiRobusta461.Domain.Entities
             Nome = nome;
             Email = email;
             Senha = senha;
-            Id = Guid.NewGuid();
             Status = StatusJogador.EmAnalise;
 
             new AddNotifications<Jogador>(this)
