@@ -33,6 +33,8 @@ namespace dotNet_ApiRobusta461.Domain.Services
             Email email = new Email(request.Email);
             Jogador jogador = new Jogador(nome, email, request.Senha);
 
+            AddNotifications(nome, email);
+
             if (this.IsInvalid())
                 return null;
 

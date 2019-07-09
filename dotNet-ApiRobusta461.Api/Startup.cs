@@ -1,8 +1,4 @@
-﻿using System;
-using System.Net.Http.Extensions.Compression.Core.Compressors;
-using System.Threading.Tasks;
-using System.Web.Http;
-using dotNet_ApiRobusta461.Api.Security;
+﻿using dotNet_ApiRobusta461.Api.Security;
 using dotNet_ApiRobusta461.IoC.Unity;
 using Microsoft.AspNet.WebApi.Extensions.Compression.Server;
 using Microsoft.Owin;
@@ -10,6 +6,9 @@ using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
+using System;
+using System.Net.Http.Extensions.Compression.Core.Compressors;
+using System.Web.Http;
 using Unity;
 
 [assembly: OwinStartup(typeof(dotNet_ApiRobusta461.Api.Startup))]

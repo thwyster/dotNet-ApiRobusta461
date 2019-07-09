@@ -16,12 +16,28 @@ namespace dotNet_ApiRobusta461.Api.Controllers
 
         public JogadorController(IUnitOfWork unitOfWork, IServiceJogador serviceJogador) : base(unitOfWork)
         {
-            this._serviceJogador = serviceJogador;
+            _serviceJogador = serviceJogador;
         }
 
         [Route("Adicionar")]
         [HttpPost]
         public async Task<HttpResponseMessage> Adicionar(AdicionarJogadorRequest request)
+        {
+            try
+            {
+                var response = _serviceJogador.AdicionarJogador(request);
+
+                return await ResponseAsync(response, _serviceJogador);
+            }
+            catch (Exception ex)
+            {
+                return await ResponseExceptionAsync(ex);
+            }
+        }
+
+        [Route("Listar")]
+        [HttpGet]
+        public async Task<HttpResponseMessage> Listar()
         {
             try
             {

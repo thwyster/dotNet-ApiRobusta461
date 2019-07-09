@@ -3,13 +3,10 @@ using dotNet_ApiRobusta461.Domain.Interfaces.Services;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using Unity;
 
 namespace dotNet_ApiRobusta461.Api.Security
