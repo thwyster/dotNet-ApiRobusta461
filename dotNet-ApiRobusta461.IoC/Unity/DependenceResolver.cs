@@ -5,6 +5,7 @@ using dotNet_ApiRobusta461.Domain.Services;
 using dotNet_ApiRobusta461.Infra.Persistence;
 using dotNet_ApiRobusta461.Infra.Persistence.Repositories;
 using dotNet_ApiRobusta461.Infra.Persistence.Repositories.Base;
+using dotNet_ApiRobusta461.Infra.Transactions;
 using prmToolkit.NotificationPattern;
 using System.Data.Entity;
 using Unity;

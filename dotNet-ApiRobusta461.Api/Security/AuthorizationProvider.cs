@@ -1,13 +1,16 @@
-﻿using Microsoft.Owin.Security.OAuth;
-using Microsoft.Practices.Unity;
+﻿using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
+using dotNet_ApiRobusta461.Domain.Interfaces.Services;
+using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
-using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
-using dotNet_ApiRobusta461.Domain.Interfaces.Services;
+using System.Web;
+using Unity;
 
 namespace dotNet_ApiRobusta461.Api.Security
 {
@@ -31,14 +34,11 @@ namespace dotNet_ApiRobusta461.Api.Security
             {
                 IServiceJogador serviceJogador = _container.Resolve<IServiceJogador>();
 
-
                 AutenticarJogadorRequest request = new AutenticarJogadorRequest();
                 request.Email = context.UserName;
                 request.Senha = context.Password;
 
                 AutenticarJogadorResponse response = serviceJogador.AutenticarJogador(request);
-
-
 
                 if (serviceJogador.IsInvalid())
                 {
