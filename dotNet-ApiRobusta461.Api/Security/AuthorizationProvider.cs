@@ -1,13 +1,13 @@
 ﻿using dotNet_ApiRobusta461.Domain.Arguments.Jogador;
 using dotNet_ApiRobusta461.Domain.Interfaces.Services;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Practices.Unity;
 using Newtonsoft.Json;
 using System;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
-using Unity;
 
 namespace dotNet_ApiRobusta461.Api.Security
 {

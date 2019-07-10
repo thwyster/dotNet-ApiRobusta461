@@ -3,13 +3,13 @@ using dotNet_ApiRobusta461.IoC.Unity;
 using Microsoft.AspNet.WebApi.Extensions.Compression.Server;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Practices.Unity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using System;
 using System.Net.Http.Extensions.Compression.Core.Compressors;
 using System.Web.Http;
-using Unity;
 
 [assembly: OwinStartup(typeof(dotNet_ApiRobusta461.Api.Startup))]
 
@@ -21,8 +21,8 @@ namespace dotNet_ApiRobusta461.Api
         {
             HttpConfiguration config = new HttpConfiguration();
 
-            // Swagger
-            //SwaggerConfig.Register(config);
+            //Swagger
+            SwaggerConfig.Register(config);
 
             // Configure Dependency Injection
             var container = new UnityContainer();

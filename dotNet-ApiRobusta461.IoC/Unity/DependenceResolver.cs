@@ -6,10 +6,9 @@ using dotNet_ApiRobusta461.Infra.Persistence;
 using dotNet_ApiRobusta461.Infra.Persistence.Repositories;
 using dotNet_ApiRobusta461.Infra.Persistence.Repositories.Base;
 using dotNet_ApiRobusta461.Infra.Transactions;
+using Microsoft.Practices.Unity;
 using prmToolkit.NotificationPattern;
 using System.Data.Entity;
-using Unity;
-using Unity.Lifetime;
 
 namespace dotNet_ApiRobusta461.IoC.Unity
 {
