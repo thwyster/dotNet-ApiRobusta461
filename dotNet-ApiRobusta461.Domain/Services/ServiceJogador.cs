@@ -29,7 +29,7 @@ namespace dotNet_ApiRobusta461.Domain.Services
 
         public AdicionarJogadorResponse AdicionarJogador(AdicionarJogadorRequest request)
         {
-            Nome nome = new Nome(request.PrimeiroNome, request.Senha);
+            Nome nome = new Nome(request.PrimeiroNome, request.UltimoNome);
             Email email = new Email(request.Email);
             Jogador jogador = new Jogador(nome, email, request.Senha);
 

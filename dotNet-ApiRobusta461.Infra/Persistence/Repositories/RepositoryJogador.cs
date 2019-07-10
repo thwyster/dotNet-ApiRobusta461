@@ -1,4 +1,5 @@
-﻿using dotNet_ApiRobusta461.Domain.Entities;
+﻿
+using dotNet_ApiRobusta461.Domain.Entities;
 using dotNet_ApiRobusta461.Domain.Interfaces.Repositories;
 using dotNet_ApiRobusta461.Infra.Persistence.Repositories.Base;
 using System;

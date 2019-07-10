@@ -12,6 +12,6 @@ namespace dotNet_ApiRobusta461.Domain.Arguments.Jogador
         public string Email { get; set; }
         public string Senha { get; set; }
         public string PrimeiroNome { get; set; }
-        public string SegundoNome { get; set; }
+        public string UltimoNome { get; set; }
     }
 }
