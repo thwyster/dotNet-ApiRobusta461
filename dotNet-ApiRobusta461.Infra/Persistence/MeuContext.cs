@@ -8,6 +8,7 @@ namespace dotNet_ApiRobusta461.Infra.Persistence
     {
         public IDbSet<Jogador> Jogadores { get; set; }
         public IDbSet<Plataforma> Plataformas { get; set; }
+        public IDbSet<Jogo> Jogos { get; set; }
 
         public MeuContext() : base("connectionString")
         {

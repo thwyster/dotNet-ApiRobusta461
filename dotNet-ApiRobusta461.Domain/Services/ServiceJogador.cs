@@ -35,6 +35,9 @@ namespace dotNet_ApiRobusta461.Domain.Services
 
             AddNotifications(nome, email);
 
+            if (_repositoryJogador.Existe(w => w.Email.Endereco == request.Email))
+                AddNotification("Email", "Email já existente");
+
             if (this.IsInvalid())
                 return null;
 
@@ -96,7 +99,8 @@ namespace dotNet_ApiRobusta461.Domain.Services
 
         public IEnumerable<JogadorResponse> ListarJogador()
         {
-            return _repositoryJogador.Listar().Select(jogador => (JogadorResponse)jogador).ToList();
+            //return _repositoryJogador.Listar().Select(jogador => (JogadorResponse)jogador).ToList();
+            return _repositoryJogador.Listar().ToList().Select(jogador => (JogadorResponse)jogador).ToList();
         }
 
         public ResponseBase ExcluirJogador(Guid Id)

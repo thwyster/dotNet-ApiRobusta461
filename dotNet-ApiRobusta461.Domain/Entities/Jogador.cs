@@ -9,6 +9,10 @@ namespace dotNet_ApiRobusta461.Domain.Entities
 {
     public class Jogador : EntityBase
     {
+        protected Jogador()
+        {
+        }
+
         public Jogador(Email email, string senha)
         {
             Email = email;
@@ -48,7 +52,6 @@ namespace dotNet_ApiRobusta461.Domain.Entities
             AddNotifications(nome, email);
         }
 
-        public Guid Id { get; private set; }
         public Nome Nome { get; private set; }
         public Email Email { get; private set; }
         public string Senha { get; private set; }

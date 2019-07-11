@@ -114,11 +114,17 @@
     <Compile Include="Migrations\201907011759446_Atualizando-Plataforma.Designer.cs">
       <DependentUpon>201907011759446_Atualizando-Plataforma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907111422509_AdicionadaTabelaJogo.cs" />
+    <Compile Include="Migrations\201907111422509_AdicionadaTabelaJogo.Designer.cs">
+      <DependentUpon>201907111422509_AdicionadaTabelaJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\Map\MapJogo.cs" />
     <Compile Include="Persistence\Map\MapPlataforma.cs" />
     <Compile Include="Persistence\Map\MapJogador.cs" />
     <Compile Include="Persistence\MeuContext.cs" />
     <Compile Include="Persistence\Repositories\Base\RepositoryBase.cs" />
+    <Compile Include="Persistence\Repositories\RepositoryJogo.cs" />
     <Compile Include="Persistence\Repositories\RepositoryJogador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transactions\IUnitOfWork.cs" />
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907011759446_Atualizando-Plataforma.resx">
       <DependentUpon>201907011759446_Atualizando-Plataforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907111422509_AdicionadaTabelaJogo.resx">
+      <DependentUpon>201907111422509_AdicionadaTabelaJogo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
