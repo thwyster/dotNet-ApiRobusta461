@@ -37,6 +37,8 @@ namespace dotNet_ApiRobusta461.Api.Security
 
                 AutenticarJogadorResponse response = serviceJogador.AutenticarJogador(request);
 
+
+
                 if (serviceJogador.IsInvalid())
                 {
                     if (response == null)
